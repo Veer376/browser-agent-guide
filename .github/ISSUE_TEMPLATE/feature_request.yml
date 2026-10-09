@@ -1,0 +1,19 @@
+name: Feature proposal
+description: Describe the workflow and intended impact
+title: "feat: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: What breaks or takes too long today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed workflow
+      description: Outline the smallest useful improvement and constraints.
+    validations:
+      required: true

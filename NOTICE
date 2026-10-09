@@ -1,0 +1,23 @@
+This skill includes material derived from the Microsoft playwright-cli repository.
+
+Source:
+- Repository: microsoft/playwright-cli
+- Path: skills/playwright-cli/SKILL.md
+
+Copyright (c) Microsoft Corporation.
+
+Licensed under the Apache License, Version 2.0.
+See LICENSE at the repository root.
+
+Modifications:
+- Adapted for the Codex skill collection.
+- Added a wrapper script and local reference guides.
+
+Browser Agent Guide is an independent community project, not an official
+Microsoft or Playwright product. Its agent-session coordination, temporal
+observation tooling and optional Chrome guidance extension are separately
+maintained additions. Third-party copyrights and license obligations remain
+with their respective authors.
+
+Public repository branding uses the original Browser Agent Guide cursor mark.
+Microsoft Playwright logo image assets are not redistributed as this project's icon.

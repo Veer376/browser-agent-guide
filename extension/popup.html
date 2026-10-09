@@ -1,0 +1,11 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Playwright agent</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+<header><img class="brand" src="icons/agent.svg" alt=""><div><h1>Playwright</h1><p class="subtitle">Agent guidance</p></div><button id="refresh" class="icon-button" type="button" aria-label="Refresh connection" title="Refresh connection"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 12-1l2 3M4 15l2 3a7 7 0 0 0 12-1"/></svg></button></header>
+<section id="connected" hidden>
+<div class="connection"><span class="dot"></span><span id="session"></span></div>
+<form id="form" class="composer"><label class="sr-only" for="message">Guidance for the agent</label><textarea id="message" maxlength="2000" rows="4" placeholder="What should the agent do next?"></textarea><div class="composer-footer"><span>Sent with the next command</span><button id="send" type="submit" aria-label="Send guidance" title="Send guidance · ⌘/Ctrl + Enter" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></button></div></form>
+<section id="queue-section" hidden><div class="queue-heading"><h2>Queued</h2><span id="pending"></span></div><div id="queue"></div></section>
+</section>
+<p id="status" role="status" aria-live="polite">Connecting…</p>
+<script src="popup.js"></script></body></html>

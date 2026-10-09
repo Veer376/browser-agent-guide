@@ -1,0 +1,6 @@
+interface:
+  display_name: "Browser Agent Guide"
+  short_description: "Automate real browsers from the terminal"
+  icon_small: "./assets/guide-mark.svg"
+  icon_large: "./assets/guide-mark.png"
+  default_prompt: "Use $playwright to control this browser workflow and verify the resulting page state."

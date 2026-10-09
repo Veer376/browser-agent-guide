@@ -1,0 +1,25 @@
+name: Bug report
+description: Report a reproducible issue without sharing secrets
+title: "bug: "
+labels: [bug]
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Describe expected and actual behavior. Redact URLs, cookies, tokens and private browser data.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Use a disposable page or test profile wherever possible.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: macOS version, Python version, Playwright CLI version
+    validations:
+      required: true

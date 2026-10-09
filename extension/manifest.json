@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Playwright \u00b7 Guide agent",
+  "version": "0.3.0",
+  "description": "Queue human guidance for the agent owning the active Playwright tab.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "tabGroups",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8799/*"
+  ],
+  "action": {
+    "default_title": "Guide the agent in this tab",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/agent-16.png",
+      "32": "icons/agent-32.png"
+    }
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzV66qfkAUtwJ8pcd8+iGjTmc8thpqNiWP6qgadeVzlgJ2woyrYVBDUpec24tNs4JENPzodeZAU3aCKj0Rqmx9KliRN2ekKBBbxgwMB8S17IOPU85YQ9HC6/ltX1S0/crTI+2OU80KursQBaEgjMBuukJatrBAI1D//oBCxlpknTm5NkJDjkKO7qR8FHKNJ4iGvjHx3Zgrc3cpMfcSFmJoKtZREMRyM5T4659H3WXs7FxE8YUHi8EAWJXCQxbqTC+OPOMH0JxMCJ27bsu1Ha7AaJBUXjgkA4bPuF3lF/ipBuey7HNmTWiZ5SpsWwC5PyjyGZ6JKDF1HTmg5aJI7cbNwIDAQAB",
+  "icons": {
+    "16": "icons/agent-16.png",
+    "32": "icons/agent-32.png",
+    "48": "icons/agent-48.png",
+    "128": "icons/agent-128.png"
+  }
+}

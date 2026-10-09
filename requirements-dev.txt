@@ -1,0 +1,3 @@
+# The existing tests use Python unittest (included in stdlib).
+# Temporal-observation contact sheet tests require Pillow.
+Pillow>=10.0,<13

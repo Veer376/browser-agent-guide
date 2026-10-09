@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  macos-tests:
+    name: macOS / unit, install and browser isolation
+    runs-on: macos-15
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Public file safety preflight
+        run: python scripts/check_publication.py
+      - name: Contributor/release policy regression tests
+        run: python -m unittest discover -s tests -p 'test_publication_policy.py' -v
+      - run: python -m unittest discover -s skills/playwright/tests -v
+      - run: python -m unittest discover -s tests -v
+      - name: Validate JavaScript syntax
+        run: |
+          node --check website/main.js
+          node --check extension/popup.js
+          node --check skills/playwright/scripts/pw-guidance.cjs
+      - name: Ensure separate-browser prerequisite on CI
+        run: |
+          if [ ! -x "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" ]; then
+            # Runner only; never installed on a developer's computer by CI.
+            npx --yes --package playwright playwright install chrome
+          fi
+          test -x "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+      - name: Isolated macOS installation and session E2E
+        env:
+          BAG_RUN_BROWSER_E2E: '1'
+        run: python -m unittest discover -s tests -p 'test_*e2e.py' -v
+      - name: Agent-scope, prerequisites, launcher and session isolation E2E
+        env:
+          BAG_RUN_BROWSER_E2E: '1'
+        run: python -m unittest discover -s tests -p 'test_p0_portability.py' -v
+      - name: Validate Chrome manifest syntax
+        run: python -m json.tool extension/manifest.json > /dev/null
+      - name: Validate contributor/CI YAML syntax
+        run: |
+          ruby -e 'require "yaml"; ARGV.each { |file| YAML.load_file(file) }' \
+            .github/workflows/ci.yml .github/ISSUE_TEMPLATE/*.yml
+      - name: Validate local skill linker syntax
+        run: sh -n scripts/link-local-skill.sh
+      - name: Check committed changes for whitespace mistakes
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          if [ -n "$BASE_REF" ]; then
+            git diff --check "origin/$BASE_REF...HEAD"
+          elif git rev-parse HEAD^ >/dev/null 2>&1; then
+            git diff --check HEAD^ HEAD
+          else
+            git diff-tree --check --root HEAD
+          fi

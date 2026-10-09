@@ -1,0 +1,25 @@
+.DS_Store
+.playwright-cli/
+output/
+*.log
+*.env
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.pytest_cache/
+.venv/
+node_modules/
+dist/
+.coverage
+*.key
+*.sqlite
+*.sqlite-*
+/diagnostics/
+
+# Local visual design artifacts — not part of the public website
+/website/*-lab.html
+/website/*.next.html
+/website/assets/cursor-system/
+
+# Private deferred browser-demo/website recording ideas (local-only)
+/notes.md
