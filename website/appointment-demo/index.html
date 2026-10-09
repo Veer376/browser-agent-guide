@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f1">
+  <meta name="description" content="Morrow — a fictional, interactive appointment booking experience for the Browser Agent Guide demonstration.">
+  <title>Morrow — Thoughtful care, beautifully simple</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="site-announcement"><span class="announcement-dot"></span> Care that feels a little more human. <a href="#our-approach">Explore our approach <span aria-hidden="true">↗</span></a></div>
+  <header class="site-header" id="top">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Morrow home"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span>morrow<span class="brand-dot">.</span></a>
+      <nav class="site-nav" aria-label="Primary navigation" id="site-nav">
+        <a href="#our-approach">Our approach</a>
+        <a href="#care">Our care</a>
+        <a href="#team">The team</a>
+        <a href="#faqs">Questions</a>
+      </nav>
+      <div class="header-right"><span class="location">AUSTIN, TX <span class="location-dot">●</span> ACCEPTING PATIENTS</span><a class="nav-book" href="#book">Book a visit <span aria-hidden="true">↗</span></a></div>
+      <button class="menu-button" type="button" id="menu-button" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dash"></span> A DIFFERENT KIND OF HEALTHCARE</p>
+        <h1 id="hero-title">A little more<br><em>you.</em> A lot more<br><em>well.</em></h1>
+        <p class="hero-description">Good care should feel like a conversation, not a checklist. Meet thoughtful, personal healthcare designed around your life.</p>
+        <div class="hero-actions"><a href="#book" class="button button-dark">Find your moment <span aria-hidden="true">↗</span></a><a href="#our-approach" class="text-link">Get to know us <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-footnote"><span class="line-ornament"></span><p><strong>Care, without the hurry.</strong><br>Longer conversations. More room to breathe.</p></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo-wrap"><img src="assets/clinic.jpg" alt="Thoughtfully designed, light-filled contemporary space" fetchpriority="high"></div>
+        <div class="hero-image-caption">A LITTLE ROOM TO EXHALE <span>↗</span></div>
+        <div class="hero-stamp" aria-hidden="true"><span>HERE'S TO<br><em>FEELING</em><br>BETTER</span><b>✳</b></div>
+        <div class="hero-floating-card"><span class="mini-leaf" aria-hidden="true">✳</span><span><strong>Thoughtful by nature.</strong><small>Personal care, every step.</small></span></div>
+      </div>
+      <div class="hero-side-note" aria-hidden="true">01 / AN INTRODUCTION TO MORROW</div>
+    </section>
+
+    <section class="ticker" aria-label="Our values"><div class="ticker-track"><span>MORE LISTENING</span><b>✳</b><span>LESS WAITING</span><b>✳</b><span>REAL CONNECTION</span><b>✳</b><span>CARE THAT LASTS</span><b>✳</b><span>MORE LISTENING</span><b>✳</b></div></section>
+
+    <section class="approach shell section-spacing" id="our-approach" aria-labelledby="approach-title">
+      <div class="section-heading"><span class="section-number">01 / THE MORROW WAY</span><span class="section-rule"></span><span class="section-aside">BETTER BEGINS HERE</span></div>
+      <div class="approach-layout">
+        <div><p class="eyebrow">GOOD TO MEET YOU</p><h2 id="approach-title">Finally, care that<br><em>gets you.</em></h2></div>
+        <div class="approach-detail"><p>There’s more to your health than a chart and a set of numbers. We make space for the full picture — your questions, your goals, and everything in between.</p><p>Less rushing. More understanding. A better way to feel like yourself.</p><a href="#book" class="text-link">Let's get started <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="value-grid">
+        <article><span class="value-icon">◉</span><span class="value-number">01</span><h3>We listen first.</h3><p>Your story deserves the time it takes. No ticking clock, no rushed answers.</p></article>
+        <article><span class="value-icon">✳</span><span class="value-number">02</span><h3>The whole picture.</h3><p>A human approach that connects your everyday life with your long-term health.</p></article>
+        <article><span class="value-icon">⌁</span><span class="value-number">03</span><h3>Here for the long run.</h3><p>A care relationship that gets better as we get to know you.</p></article>
+      </div>
+    </section>
+
+    <section class="care-section" id="care" aria-labelledby="care-title">
+      <div class="shell care-inner"><div class="section-heading invert"><span class="section-number">02 / WHAT WE DO</span><span class="section-rule"></span><span class="section-aside">CARE FOR REAL LIFE</span></div>
+        <div class="care-head"><h2 id="care-title">All the ways<br>we <em>show up.</em></h2><p>From small concerns to the big picture, find the kind of care that makes sense for you.</p></div>
+        <div class="care-items">
+          <a href="#book" class="care-item"><span class="care-item-number">01</span><span><strong>Everyday care</strong><small>Feel better about the little things.</small></span><span class="care-arrow">↗</span></a>
+          <a href="#book" class="care-item"><span class="care-item-number">02</span><span><strong>Annual wellness</strong><small>A check-in for the whole you.</small></span><span class="care-arrow">↗</span></a>
+          <a href="#book" class="care-item"><span class="care-item-number">03</span><span><strong>Follow-up visits</strong><small>Because feeling better takes time.</small></span><span class="care-arrow">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-section shell section-spacing" id="book" aria-labelledby="booking-title">
+      <div class="section-heading"><span class="section-number">03 / YOUR MOMENT</span><span class="section-rule"></span><span class="section-aside">A SMALL STEP TOWARDS BETTER</span></div>
+      <div class="booking-heading"><div><p class="eyebrow"><span class="eyebrow-dash"></span> LET'S MAKE A DATE</p><h2 id="booking-title">Good things begin<br>with <em>hello.</em></h2></div><p>Tell us when works for you. We'll take it from there. No phone calls, no waiting on hold — just a moment for yourself.</p></div>
+      <div class="booking-grid">
+        <aside class="booking-aside">
+          <div class="doctor-photo"><img src="assets/doctor.jpg" alt="Illustrative portrait of a healthcare professional" loading="lazy"><div class="doctor-caption"><span>YOUR CARE TEAM</span><span>01 / 01</span></div></div>
+          <div class="doctor-description"><div><span class="eyebrow">MEET YOUR CLINICIAN</span><h3>Dr. Maya Ellis</h3><p>Primary care · Whole-person health</p></div><span class="star-symbol" aria-hidden="true">✳</span></div>
+          <blockquote>“I believe everyone deserves to feel heard, understood, and genuinely cared for.”</blockquote>
+          <p class="doctor-disclaimer">Illustrative clinician profile for this fictional booking experience.</p>
+        </aside>
+        <div class="booking-card">
+          <div class="card-top"><div class="card-brand"><span class="card-flower">✳</span><span>MORROW / BOOK A VISIT</span></div><span class="card-counter" id="card-counter">01 / 02</span></div>
+          <div class="progress" aria-label="Booking progress"><div class="progress-bar" id="progress-bar"></div></div>
+          <form id="booking-form" novalidate>
+            <div id="booking-step">
+              <h3>Choose your moment.</h3><p class="card-subtitle">A little time set aside, just for you.</p>
+              <fieldset class="field-group" id="visit-group"><legend>01 / WHAT BRINGS YOU IN?</legend>
+                <div class="visit-types">
+                  <button class="visit-type is-selected" type="button" data-visit="Annual wellness" aria-pressed="true"><span class="visit-icon">✳</span><span><strong>Annual wellness</strong><small>A moment to check in</small></span><span class="selected-check">✓</span></button>
+                  <button class="visit-type" type="button" data-visit="Everyday care" aria-pressed="false"><span class="visit-icon">⌁</span><span><strong>Everyday care</strong><small>Let's talk it through</small></span><span class="selected-check">✓</span></button>
+                  <button class="visit-type" type="button" data-visit="Follow-up" aria-pressed="false"><span class="visit-icon">↗</span><span><strong>Follow-up</strong><small>Picking up where we left off</small></span><span class="selected-check">✓</span></button>
+                </div>
+              </fieldset>
+              <fieldset class="field-group" id="date-group"><legend>02 / PICK YOUR DAY <span>OCTOBER 2026</span></legend>
+                <div class="date-grid">
+                  <button class="date-option is-selected" type="button" data-date="2026-10-12" aria-pressed="true"><span>MON</span><strong>12</strong><small>OCT</small></button>
+                  <button class="date-option" type="button" data-date="2026-10-13" aria-pressed="false"><span>TUE</span><strong>13</strong><small>OCT</small></button>
+                  <button class="date-option" type="button" data-date="2026-10-14" aria-pressed="false"><span>WED</span><strong>14</strong><small>OCT</small></button>
+                  <button class="date-option" type="button" data-date="2026-10-16" aria-pressed="false"><span>FRI</span><strong>16</strong><small>OCT</small></button>
+                </div>
+              </fieldset>
+              <fieldset class="field-group time-group" id="time-group"><legend>03 / CHOOSE A TIME <span>CT / IN-PERSON</span></legend>
+                <div class="time-grid">
+                  <button class="time-option" type="button" data-time="9:00 AM" aria-pressed="false">9:00 AM</button>
+                  <button class="time-option is-selected" type="button" data-time="10:30 AM" aria-pressed="true">10:30 AM</button>
+                  <button class="time-option" type="button" data-time="2:15 PM" aria-pressed="false">2:15 PM</button>
+                </div>
+              </fieldset>
+              <fieldset class="field-group details-group"><legend>04 / THE LITTLE DETAILS</legend>
+                <div class="input-row">
+                  <label for="patient-name">Your name <span>*</span><input id="patient-name" name="name" type="text" autocomplete="name" placeholder="e.g. Taylor Quinn" minlength="2" maxlength="80" required></label>
+                  <label for="patient-email">Email address <span>*</span><input id="patient-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+                </div>
+                <label for="patient-note" class="note-label">Anything we should know? <span>OPTIONAL</span><textarea id="patient-note" name="note" placeholder="A little context goes a long way…" rows="3" maxlength="500"></textarea></label>
+              </fieldset>
+              <div class="booking-summary"><span>YOUR MOMENT</span><strong id="summary-line">Mon 12 Oct · 10:30 AM</strong><span class="summary-note">Dr. Maya Ellis · In-person</span></div>
+              <div class="form-footer"><p id="form-error" class="form-error" role="alert" aria-live="polite"></p><button type="submit" class="button button-dark button-wide" id="review-button">Review appointment <span>↗</span></button><small>Nothing will be booked yet — this is a practice experience.</small></div>
+            </div>
+            <div id="review-step" hidden>
+              <p class="eyebrow">ALMOST THERE</p><h3>Take one more look.</h3><p class="card-subtitle">The little details matter. Make sure everything looks right.</p>
+              <div class="review-list">
+                <div><span>VISIT TYPE</span><strong id="review-visit"></strong></div>
+                <div><span>WHEN</span><strong id="review-date"></strong></div>
+                <div><span>WITH</span><strong>Dr. Maya Ellis · In-person</strong></div>
+                <div><span>FOR</span><strong id="review-person"></strong></div>
+                <div><span>EMAIL</span><strong id="review-email"></strong></div>
+              </div>
+              <p class="review-reminder"><span>✳</span> A little reminder: it's always worth double-checking the date.</p>
+              <div class="review-actions"><button type="button" class="text-button" id="edit-booking">← Change details</button><button type="button" id="confirm-booking" class="button button-dark">Confirm details <span>↗</span></button></div>
+              <p class="practice-note">This is a demo form. No real clinic receives your information.</p>
+            </div>
+            <div id="confirmed-step" hidden aria-live="polite">
+              <div class="confirmation-mark">✓</div><p class="eyebrow">ALL SET, FOR THE DEMO</p><h3>Here's to a<br><em>better tomorrow.</em></h3><p class="card-subtitle">You successfully completed the appointment flow.</p>
+              <div class="confirmation-visit"><span>YOUR PRACTICE APPOINTMENT</span><strong id="confirmed-date"></strong><small id="confirmed-person"></small></div>
+              <p class="practice-note">This is a fictional clinic and a local demonstration. No actual appointment was booked and no information was sent anywhere.</p>
+              <button type="button" class="button button-dark button-wide" id="start-over">Make another practice booking <span>↗</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band"><div class="shell quote-inner"><span class="quote-mark">“</span><blockquote>A better kind of care starts with a very simple thing: <em>being heard.</em></blockquote><span class="quote-signature">THE MORROW PROMISE &nbsp; ↗</span></div></section>
+
+    <section class="team-section shell section-spacing" id="team"><div class="section-heading"><span class="section-number">04 / NICE TO MEET YOU</span><span class="section-rule"></span><span class="section-aside">REAL PEOPLE, REAL CONNECTION</span></div>
+      <div class="team-grid"><div class="team-copy"><p class="eyebrow">HERE, WITH YOU</p><h2>Care built on<br><em>connection.</em></h2><p>We make room for real conversation, giving you time to ask, reflect, and feel confident in your care.</p><a href="#book" class="button button-outline">Start the conversation <span>↗</span></a></div><div class="team-image"><img src="assets/interior.jpg" loading="lazy" alt="A caring, supportive moment between people"><span>HUMAN FIRST. ALWAYS.</span></div></div>
+    </section>
+
+    <section class="faq-section" id="faqs"><div class="shell faq-grid"><div><p class="eyebrow">GOOD QUESTIONS</p><h2>A little clarity<br>goes a <em>long way.</em></h2></div><div class="faqs">
+      <details><summary>Is Morrow a real clinic? <span>+</span></summary><p>No. Morrow is a fictional clinic created as a safe, realistic test environment for browser automation. You can try the entire booking flow without transmitting personal information.</p></details>
+      <details><summary>Will my appointment actually be booked? <span>+</span></summary><p>No. The form runs entirely in this browser. Submitting it only shows a local confirmation screen.</p></details>
+      <details><summary>Can I change my date before I confirm? <span>+</span></summary><p>Absolutely. Choose a day and time, enter your details, then use “Change details” from the review screen. Your entries remain available while you make changes.</p></details>
+      <details><summary>What is this experience for? <span>+</span></summary><p>This practice booking page is a realistic target for the Browser Agent Guide Playwright skill: scrolling, clicking, inspecting, typing, verifying dates and testing outcomes.</p></details>
+    </div></div></section>
+  </main>
+
+  <footer class="footer"><div class="shell"><div class="footer-top"><div><a class="brand footer-brand" href="#top"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span>morrow<span class="brand-dot">.</span></a><p>Better care. Better days.<br>Better tomorrows.</p></div><div class="footer-links"><a href="#our-approach">Our approach</a><a href="#care">Our care</a><a href="#book">Book a visit</a><a href="#faqs">Questions</a></div><a href="#top" class="back-to-top">BACK TO TOP ↗</a></div><div class="footer-bottom"><span>© 2026 MORROW — FICTIONAL DEMO EXPERIENCE</span><span>BUILT FOR BROWSER AGENT GUIDE <span class="asterisk">✳</span> NO REAL BOOKINGS</span></div></div></footer>
+</body>
+</html>

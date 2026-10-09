@@ -31,6 +31,30 @@
 
 ---
 
+### Watch a real browser run
+
+<p align="center">
+  <a href="https://veer376.github.io/browser-agent-guide/#demo">
+    <img src="website/media/appointment-playwright-poster.jpg" width="850" alt="Watch a 39-second recording of Playwright selecting a visit, typing details, and correcting the appointment date on the fictional Morrow website">
+  </a>
+</p>
+
+<p align="center">
+  <strong>39 seconds · Real Playwright clicks, typing, inspection and date correction</strong>
+  <br>
+  <sub>Actual browser automation on a fictional, locally simulated healthcare booking page. The visible cursor and correction captions are recording overlays, not a connected Chrome Guide session.</sub>
+</p>
+
+<p align="center">
+  <a href="https://veer376.github.io/browser-agent-guide/#demo"><strong>▶ Watch the video</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://veer376.github.io/browser-agent-guide/appointment-demo/"><strong>Try the appointment page ↗</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://veer376.github.io/browser-agent-guide/media/appointment-playwright.mp4">Open MP4</a>
+</p>
+
+---
+
 ### 01 / Two independent layers
 
 <table>

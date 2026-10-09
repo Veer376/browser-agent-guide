@@ -15,6 +15,7 @@ dist/
 *.sqlite
 *.sqlite-*
 /diagnostics/
+/demo-artifacts/
 
 # Local visual design artifacts — not part of the public website
 /website/*-lab.html

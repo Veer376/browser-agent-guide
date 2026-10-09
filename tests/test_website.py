@@ -71,7 +71,29 @@ class WebsiteChecks(unittest.TestCase):
         self.assertIn("PUBLIC SKILL · OPTIONAL GUIDE EXPERIMENTAL", self.html)
         self.assertIn("NOT A CONNECTED AGENT", self.html)
         self.assertIn("DELIVERED DOES NOT MEAN FOLLOWED", self.html)
-        self.assertNotIn('href="https://github.com/Veer376/browser-agent-guide"', self.html)
+        self.assertIn('href="https://github.com/Veer376/browser-agent-guide"', self.html)
+
+    def test_recorded_showcase_and_real_booking_target_are_linked(self):
+        self.assertIn('id="demo"', self.html)
+        self.assertIn('href="#demo"', self.html)
+        self.assertIn('id="appointment-video"', self.html)
+        self.assertIn('controls playsinline preload="metadata"', self.html)
+        self.assertNotIn('autoplay', self.html)
+        self.assertIn('src="media/appointment-playwright.mp4"', self.html)
+        self.assertIn('poster="media/appointment-playwright-poster.jpg"', self.html)
+        self.assertIn('href="appointment-demo/"', self.html)
+        self.assertIn("not a connected Chrome Guide event", self.html)
+        recording = ROOT / "media/appointment-playwright.mp4"
+        poster = ROOT / "media/appointment-playwright-poster.jpg"
+        self.assertTrue(recording.is_file())
+        self.assertGreater(recording.stat().st_size, 100_000)
+        self.assertLess(recording.stat().st_size, 5_000_000)
+        self.assertTrue(poster.read_bytes().startswith(b"\xff\xd8\xff"))
+        self.assertTrue((ROOT / "appointment-demo/index.html").is_file())
+        readme = (ROOT.parent / "README.md").read_text()
+        self.assertIn("website/media/appointment-playwright-poster.jpg", readme)
+        self.assertIn("https://veer376.github.io/browser-agent-guide/#demo", readme)
+        self.assertIn("https://veer376.github.io/browser-agent-guide/appointment-demo/", readme)
 
     def test_visual_design_contract_and_responsiveness(self):
         for token in ("--paper", "--ink", "--blue", "--human", "--border"):
