@@ -49,6 +49,16 @@ class RepositoryLayoutTests(unittest.TestCase):
         for entry in (".playwright-cli/", "*.env", "__pycache__/", ".venv/"):
             self.assertIn(entry, ignore)
 
+    def test_pages_deploys_website_only(self):
+        workflow = (ROOT / ".github/workflows/pages.yml").read_text()
+        self.assertIn("branches: [main]", workflow)
+        self.assertIn("workflow_dispatch:", workflow)
+        self.assertIn("actions/upload-pages-artifact@v3", workflow)
+        self.assertIn("actions/deploy-pages@v4", workflow)
+        self.assertIn("path: website/", workflow)
+        self.assertNotIn("path: .\n", workflow)
+        self.assertIn("persist-credentials: false", workflow)
+
 
 if __name__ == "__main__":
     unittest.main()
