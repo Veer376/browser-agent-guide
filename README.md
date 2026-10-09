@@ -1,96 +1,122 @@
-# Browser Agent Guide
+<p align="center">
+  <a href="https://veer376.github.io/browser-agent-guide/">
+    <img src="website/favicon.svg" width="76" height="76" alt="Browser Agent Guide cursor icon">
+  </a>
+</p>
 
-### Guide your browser agent—right from Chrome.
+<p align="center"><sub>BROWSER / AGENT / GUIDE &nbsp; — &nbsp; MACOS FIRST</sub></p>
 
-Your AI agent is working in Chrome. You notice something it should do differently. **Instead of finding its chat thread, send guidance from the Chrome toolbar while viewing the tab it's controlling.** Browser Agent Guide queues your instruction for the correct agent session and delivers it at the next supported browser command.
+<h1 align="center">Your agent is browsing.<br>Stay in the loop.</h1>
 
-The project also includes a standalone browser skill powered by [Microsoft Playwright CLI](https://github.com/microsoft/playwright-cli), with navigation, UI inspection, temporal observation, and debugging tools. The Chrome guidance extension is optional.
+<p align="center">
+  A Playwright-powered browser skill, with an optional way to guide your agent<br>
+  right from the Chrome tab where it's working.
+</p>
 
-> **macOS first · public skill.** The `playwright` skill is available from this GitHub repository. The optional Chrome guidance extension and static website are **experimental and not distributed through Skills CLI**. Browser access to a personal Chrome profile requires your permission.
+<p align="center">
+  <a href="https://veer376.github.io/browser-agent-guide/"><strong>Explore the website ↗</strong></a>
+  &nbsp; · &nbsp;
+  <a href="#04--get-started"><strong>Get started</strong></a>
+  &nbsp; · &nbsp;
+  <a href="docs/features.md"><strong>Explore capabilities</strong></a>
+</p>
 
-**[Install the skill](docs/install-skill.md)** · **[Add human guidance](docs/install-extension.md)** · **[Setup with your agent](skills/playwright/references/setup.md)** · **[Explore the capabilities](docs/features.md)**
+<p align="center">
+  <a href="https://github.com/Veer376/browser-agent-guide/actions/workflows/ci.yml"><img src="https://github.com/Veer376/browser-agent-guide/actions/workflows/ci.yml/badge.svg" alt="Continuous integration status"></a>
+  &nbsp;
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-3b4a49" alt="Apache-2.0 license"></a>
+  &nbsp;
+  <img src="https://img.shields.io/badge/platform-macOS-3b4a49" alt="macOS">
+</p>
 
-**Prerequisites:** macOS, a compatible coding agent, Node.js/npm, Python, and a supported browser. Pillow is optional for temporal observation (`pw observe`). The agent can check dependencies using `pw doctor` and guide first-time setup. [Detailed requirements and recovery →](docs/install-skill.md)
+---
 
-## Guided first-time setup
+### 01 / Two independent layers
 
-After installing the `playwright` skill using the [Skills CLI](docs/install-skill.md), paste this **starter prompt into your coding agent**:
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <p><sub>01 / FOUNDATION &nbsp; — &nbsp; AVAILABLE NOW</sub></p>
+      <h3>Browser skill</h3>
+      <p>Your coding agent navigates, inspects and debugs real browsers through Microsoft's Playwright CLI and a session-aware adapter.</p>
+      <p><code>pw snapshot</code> &nbsp; <code>pw observe</code> &nbsp; <code>pw screenshot</code></p>
+      <p><a href="docs/install-skill.md">Install the browser skill ↗</a></p>
+    </td>
+    <td width="50%" valign="top">
+      <p><sub>02 / HUMAN LAYER &nbsp; — &nbsp; EXPERIMENTAL</sub></p>
+      <h3>Chrome guidance</h3>
+      <p>Leave a note from a Chrome toolbar popup while an agent works on a tab. Messages are queued for the owning agent session.</p>
+      <p><code>draft</code> → <code>queued</code> → <code>delivered</code></p>
+      <p><a href="docs/install-extension.md">Explore the optional extension ↗</a></p>
+    </td>
+  </tr>
+</table>
 
-> Read my installed `playwright` skill and `references/setup.md`, then guide me through Browser Agent Guide setup on macOS. Use my running Chrome profile by default, or a separate automation browser if I request it. Locate the installed skill and check prerequisites with its `scripts/pw.py doctor --json`. Ask before installing software, connecting my personal Chrome for the first time, or reading the clipboard. Guide me through copying the official Playwright extension token and, with my permission, saving it locally; never reveal it in chat. Verify actual browser control with a safe snapshot. Offer the separate Browser Agent Guide toolbar extension only if I want in-browser guidance.
+### 02 / The experience
 
-**What the agent will guide you through:**
+You notice a detail the agent might miss. Instead of switching back to chat, you leave a note in Chrome:
 
-1. **Confirm the browser:** existing Chrome is the default; choose a separate browser if preferred. The agent asks before first connecting to personal Chrome.
-2. **Check requirements:** the agent locates the installed skill, runs its diagnostic, and requests approval for any missing dependency or browser installation.
-3. **Optional existing-Chrome pairing:** you install Microsoft's official Playwright extension, use its own **Copy token** control, and authorize the agent to run the bundled local save helper. The token is stored in a private file, not in chat.
-4. **Verify:** the agent opens or attaches to the chosen browser, reads a harmless snapshot, checks the intended tab/session, and reports any remaining limitations.
-5. **Optional human guidance:** install the **separate** Browser Agent Guide toolbar extension and local helper if you want to send instructions to the agent from Chrome.
+> **Check the appointment date before submitting.**
 
-**About repeated permission prompts:** Microsoft's connection token can bypass the official Playwright extension's repeated *connection-approval dialog* while that token stays valid. <https://github.com/microsoft/playwright/blob/main/packages/extension/README.md> It does **not** bypass your coding agent's tool approvals, website/browser permission prompts, or confirmation for consequential actions. The Guide toolbar extension does not need this copied token. [Both human-readable steps and the agent's setup contract →](skills/playwright/references/setup.md)
+The optional Guide extension routes the note to the relevant session. The note is available at the **next supported browser-command boundary**—not as an instant interruption.
 
-## See it in action
+<p align="center"><sub>HUMAN INTENT &nbsp; → &nbsp; LOCAL QUEUE &nbsp; → &nbsp; NEXT BROWSER COMMAND</sub></p>
 
-*Demo recordings are being prepared.* The optional Guide extension queues instructions to the agent at its next supported browser command; it does not instantly interrupt or wake an idle agent. See the [technical guidance guide](docs/guidance.md) for details.
+**The distinction matters:** queued does not mean delivered; delivered does not mean read or followed. Guidance cannot wake an idle agent. The live extension's fresh-install path is still being validated; the <a href="https://veer376.github.io/browser-agent-guide/#experience">website demo</a> is an explicitly labeled interactive illustration, not a connected agent.
 
-## Start with what you need
+### 03 / Beyond browser clicks
 
-| | Browser skill | Chrome guidance (optional) |
-|---|---|---|
-| What it does | Lets your coding agent operate and inspect a browser | Lets you send timely guidance to the agent controlling a Chrome tab |
-| Ideal for | Building, debugging, testing, research workflows | Correcting direction during an active browser task |
-| Requires | Your existing coding agent + browser tooling | Browser skill, Chrome extension, local helper; existing-Chrome connection setup |
-| Installation | Use the skill installer; choose your agent and global/project scope | Follow a separate, one-time Chrome setup guide |
+| Capability | What it adds |
+|:--|:--|
+| **Navigate & inspect** | Page snapshots, element actions, screenshots and browser diagnostics |
+| **Observe change** | `pw observe` samples transient UI states and creates timestamped contact sheets |
+| **Keep context** | Scoped browser sessions, tab ownership and guarded recovery |
+| **Guide in place** | Optional tab/session-aware guidance queue and cancellation |
 
-### 1. Install the browser skill
+Read the [feature reference](docs/features.md), [architecture](docs/architecture.md), or [human guidance protocol](docs/guidance.md).
 
-The planned installation uses the existing [Skills CLI](https://github.com/vercel-labs/skills), which lets you pick your coding agent and installation scope. The compatible skill is currently named `playwright`:
+### 04 / Get started
+
+<p><sub>MACOS &nbsp; / &nbsp; PUBLIC SKILL &nbsp; / &nbsp; NO CUSTOM NPM PACKAGE</sub></p>
+
+Install the `playwright` skill with the [Skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
 npx skills add Veer376/browser-agent-guide --skill playwright
 ```
 
-Start with the skill alone. You **do not need the Guide extension** to use a newly launched automation browser. The skill install copies agent instructions; browser/runtime dependencies are checked during first-run setup.
+Choose your coding agent and project/global scope. The skill is usable **without** the separate Guide extension. Setup will check browser/runtime prerequisites; successful skill placement alone does not install Chrome or the Playwright runtime.
 
-**Requirements:** macOS, a supported coding agent, Node.js/npm, Python and a Playwright-compatible browser. The additional `pw observe` command requires the Python **Pillow** package; ordinary browser actions do not. See the [dependency and first-run guide](docs/install-skill.md) for details.
+**Requirements:** macOS, an Agent Skills-compatible coding agent, Node.js/npm, Python and a compatible browser. `Pillow` is additionally needed for `pw observe`. See the [full installation guide](docs/install-skill.md).
 
-**[Skill installation and requirements →](docs/install-skill.md)**
+<table>
+  <tr>
+    <td width="33%" valign="top"><p><sub>01 / INSTALL</sub></p><strong>Add the skill</strong><p>Choose Codex, Claude Code or another compatible agent and install scope.</p></td>
+    <td width="33%" valign="top"><p><sub>02 / VERIFY</sub></p><strong>Check prerequisites</strong><p>Run the installed adapter's <code>doctor --json</code> and verify a harmless browser snapshot.</p></td>
+    <td width="33%" valign="top"><p><sub>03 / OPTIONAL</sub></p><strong>Connect Chrome</strong><p>Authorize your existing Chrome profile or request a separate automation browser.</p></td>
+  </tr>
+</table>
 
-### 2. Pair your existing Chrome session (default browser mode)
+## Guided first-time setup
 
-`pw open` defaults to your running Chrome profile through the **official Playwright browser extension**. First-use attachment requires your authorization. An optional one-time token can be saved securely on your machine so you normally don't have to approve each new extension connection. The agent can guide you through setup. If you prefer a separate browser, request standalone mode instead.
+For a guided first run, paste this into your coding agent:
 
-**[First-run setup and trusted Chrome connection →](skills/playwright/references/setup.md)**
+> Read my installed `playwright` skill and `references/setup.md`. Guide me through setup on macOS. Check prerequisites using the installed `scripts/pw.py doctor --json`; ask before downloading software, connecting to my personal Chrome profile or reading the clipboard. I can use a separate browser instead. Verify control with a harmless snapshot, and offer the optional Browser Agent Guide Chrome extension only if I want in-browser guidance. Never print or ask me to paste connection tokens into chat.
 
-### 3. Guide the agent from Chrome (optional)
+The default browser mode uses your existing Chrome through **Microsoft's official Playwright extension**, with your permission on first attachment. A separate standalone browser can be requested instead. Microsoft's connection token can reduce repeated **connection approval** prompts, but does **not** bypass agent approvals, website permissions or confirmation for consequential actions. The Browser Agent Guide popup is a *different* extension.
 
-With the **Browser Agent Guide extension**, select a tab controlled by your agent, enter a message such as *“Don't submit yet—check the date first”*, and queue it for the correct session. You can inspect or cancel a message while it is still pending.
+**[First-run setup](skills/playwright/references/setup.md) ↗** &nbsp; · &nbsp; **[Guide extension](docs/install-extension.md) ↗**
 
-The queue delivers guidance at the next supported agent browser-command boundary. **Queued is not the same as read or followed**, and it does not wake an idle agent.
+---
 
-**[Chrome extension + local helper setup →](docs/install-extension.md)**
+### Project notes
 
-## Beyond basic browser clicks
+This is an independent community project built around [Microsoft Playwright CLI](https://github.com/microsoft/playwright-cli) and [Playwright](https://github.com/microsoft/playwright). It is **not affiliated with Microsoft**, not a standalone AI model, and does not provide a security sandbox. Browser sessions can access authenticated sites; supervise sensitive actions. Never publish session tokens, cookies, traces or private screenshots.
 
-The browser skill is built around the official Playwright CLI, with additional workflows for:
+The browser skill has passed isolated macOS installation, browser-operation and session tests, including hosted CI. The optional human-guidance extension is still experimental; there is **no Chrome Web Store listing** or tested Windows/Linux release. [Security policy](SECURITY.md) · [License](LICENSE) · [Upstream attribution](NOTICE).
 
-- **Observe over time:** `pw observe` samples an element or viewport for several seconds and builds contact sheets with timestamps and a capture manifest—useful for video, animation and transient UI.
-- **Inspect and troubleshoot:** snapshots, targeted screenshots, browser console/request inspection, and Playwright tracing.
-- **Control with context:** session-owned browser tabs, bounded recovery diagnostics, and task-scoped outputs.
-- **Human guidance:** a separate Chrome popup with session-aware message routing, pending-message review and cancellation.
-
-These capabilities exist in the current internal implementation; packaging and independent installation are still being validated. **[Examples, behavior and limitations →](docs/features.md)**
-
-## Platform and availability
-
-**Initial release target: macOS.** Windows and Linux are not advertised as supported in this first version. Windows compatibility and a Chrome Web Store listing are planned; until they pass real tests, the extension will be installed manually using the published setup guide.
-
-This project is **not** a standalone AI model or an official Microsoft product. It adds agent-facing workflows, session handling, observation and human guidance on top of Playwright. Your coding agent supplies the reasoning; Playwright supplies browser automation.
-
-## Security and credits
-
-- Browser access can act on authenticated websites. Review agent permissions and supervise consequential actions.
-- The existing-Chrome token is a secret stored in a user-local, permission-restricted file; **never paste it into a chat, README, issue or commit**. If it expires or is revoked, repeat pairing.
-- The optional guidance helper uses Chrome native messaging and an authenticated loopback broker; it is **not** an internet-facing service or a general security sandbox.
-- Built on [Microsoft Playwright CLI](https://github.com/microsoft/playwright-cli) and [Playwright](https://github.com/microsoft/playwright), which are licensed under **Apache License 2.0**. This project also selects Apache 2.0 and will preserve applicable upstream copyright and notices. [Playwright's license and attribution](https://github.com/microsoft/playwright/blob/main/LICENSE).
-
-**Contribute:** [CONTRIBUTING.md](CONTRIBUTING.md) · **Security:** [SECURITY.md](SECURITY.md) · **License:** [Apache 2.0](LICENSE) · **Attribution:** [NOTICE](NOTICE) · **Roadmap:** [ROADMAP.md](ROADMAP.md). The public skill is available; versioned releases and the website launch are separate steps.
+<p align="center">
+  <a href="CONTRIBUTING.md">Contribute</a> &nbsp; · &nbsp;
+  <a href="ROADMAP.md">Roadmap</a> &nbsp; · &nbsp;
+  <a href="https://veer376.github.io/browser-agent-guide/">Website ↗</a>
+</p>

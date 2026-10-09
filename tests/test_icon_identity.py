@@ -58,6 +58,28 @@ class ProductIconTests(unittest.TestCase):
         self.assertNotIn('.mark::before', css)
         self.assertNotIn('.mark i {', css)
 
+    def test_website_favicon_footer_and_readme_use_approved_identity(self):
+        icon = (ROOT / "website/favicon.svg").read_text()
+        self.assertEqual(icon, (ROOT / "extension/icons/agent.svg").read_text())
+        self.assertEqual(icon, (ROOT / "skills/playwright/assets/guide-mark.svg").read_text())
+
+        html = (ROOT / "website/index.html").read_text()
+        self.assertIn('href="favicon.svg" type="image/svg+xml"', html)
+        self.assertIn('href="favicon-32.png" type="image/png"', html)
+        self.assertIn('<div class="footer-brand"><img src="favicon.svg"', html)
+
+        for dest, source in (("favicon-32.png", "agent-32.png"),
+                             ("social-icon.png", "agent-128.png")):
+            with self.subTest(asset=dest):
+                self.assertEqual((ROOT / "website" / dest).read_bytes(),
+                                 (ROOT / "extension/icons" / source).read_bytes())
+
+        readme = (ROOT / "README.md").read_text()
+        self.assertIn('<img src="website/favicon.svg"', readme)
+        self.assertIn('https://veer376.github.io/browser-agent-guide/', readme)
+        self.assertIn("npx skills add Veer376/browser-agent-guide --skill playwright", readme)
+        self.assertIn("EXPERIMENTAL", readme)
+
 
 if __name__ == "__main__":
     unittest.main()

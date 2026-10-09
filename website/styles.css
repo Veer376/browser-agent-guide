@@ -244,6 +244,9 @@ h1 em, h2 em { font-family: 'Instrument Serif', Georgia, serif; color: var(--hum
 .site-footer { background: var(--deep); color: #f0f4ee; padding: 35px 0 28px; border-top: 1px solid #ffffff29; }
 .footer-top { display: flex; align-items: start; justify-content: space-between; gap: 40px; padding-bottom: 62px; }
 .footer-logo { color: #ffc0ab; font-size: 18px; margin-bottom: 19px; }
+.footer-brand { display: flex; align-items: center; gap: 11px; margin-bottom: 12px; }
+.footer-brand img { display: block; flex: 0 0 28px; }
+.footer-brand strong { margin: 0; }
 .footer-top strong { display: block; font-size: 18px; font-weight: 500; }
 .footer-top p { margin-top: 10px; color: var(--deep-muted); font-size: 12px; }
 .footer-top nav { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 42px; font-size: 12px; color: var(--deep-muted); }
